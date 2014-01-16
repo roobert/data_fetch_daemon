@@ -62,7 +62,9 @@ class DataFetchDaemon
   class SNMP < FetcherBase
     def initialize(config)
       super(config)
+
       community   = @config[:fetchers][:snmp][:auth][:community]
+
       @output_dir = @config[:fetchers][:snmp][:output_dir]
       @command    = "snmpwalk $SWITCH -c #{community} -v2c"
     end
@@ -71,9 +73,11 @@ class DataFetchDaemon
   class SwitchConfig < FetcherBase
     def initialize(config)
       super(config)
+
       user        = @config[:fetchers][:switch_config][:auth][:user]
       password    = @config[:fetchers][:switch_config][:auth][:password]
       enable      = @config[:fetchers][:switch_config][:auth][:enable]
+
       @output_dir = @config[:fetchers][:switch_config][:output_dir]
       @command    = "./switch_exec/bin/switch_exec.expect $SWITCH #{user} #{password} '#{enable}' 'show running-config'"
     end
@@ -82,9 +86,11 @@ class DataFetchDaemon
   class SwitchBridgeTable < FetcherBase
     def initialize(config)
       super(config)
+
       user        = @config[:fetchers][:switch_bridge_table][:auth][:user]
       password    = @config[:fetchers][:switch_bridge_table][:auth][:password]
       enable      = @config[:fetchers][:switch_bridge_table][:auth][:enable]
+
       @output_dir = @config[:fetchers][:switch_bridge_table][:output_dir]
       @command    = "./switch_exec/bin/switch_exec.expect $SWITCH #{user} #{password} '#{enable}' 'show bridge address-table'"
     end
