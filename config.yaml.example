@@ -1,0 +1,25 @@
+switches:
+  - switch0
+  - switch1
+  - switch2
+
+fetchers:
+  mcollective:
+    enable: true
+    output_dir: data/mcollective
+  snmp:
+    enable: false
+    output_dir: data/snmp
+  switch_config:
+    enable: true
+    output_dir: data/switch_config
+    auth:
+      user: user
+      password: pass
+      enable: enable_pass
+  switch_bridge_table:
+    enable: true
+    output_dir: data/switch_bridge_config
+    auth:
+      user: user
+      password: passwd
