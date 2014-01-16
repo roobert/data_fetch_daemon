@@ -66,7 +66,7 @@ class DataFetchDaemon
       community   = @config[:fetchers][:snmp][:auth][:community]
 
       @output_dir = @config[:fetchers][:snmp][:output_dir]
-      @command    = "snmpwalk $SWITCH -c #{community} -v2c"
+      @command    = "snmpwalk $SWITCH -c #{community} -v2c 2> /dev/null"
     end
   end
 
