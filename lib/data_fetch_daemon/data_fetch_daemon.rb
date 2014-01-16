@@ -1,10 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
-require 'yaml'
-require 'backports'
-
-class SwitchDataFetch
+class DataFetchDaemon
   def initialize(config)
     @config   = config
     @switches = config[:switches]
@@ -32,7 +28,7 @@ class SwitchDataFetch
     end
   end
 
-  class FetcherBase < SwitchDataFetch
+  class FetcherBase < DataFetchDaemon
     def initialize(config)
       super(config)
     end
