@@ -61,8 +61,9 @@ class DataFetchDaemon
 
   class SNMP < FetcherBase
     def initialize
+      community   = @config[:fetchers][:snmp][:auth][:community]
       @output_dir = @config[:fetchers][:snmp][:output_dir]
-      @command    = "snmpwalk $SWITCH -c snmpantico -v2c"
+      @command    = "snmpwalk $SWITCH -c #{community} -v2c"
     end
   end
 

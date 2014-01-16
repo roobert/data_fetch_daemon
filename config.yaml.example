@@ -10,6 +10,8 @@ fetchers:
   snmp:
     enable: false
     output_dir: data/snmp
+    auth:
+      community: community
   switch_config:
     enable: true
     output_dir: data/switch_config
