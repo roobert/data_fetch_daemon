@@ -60,7 +60,8 @@ class DataFetchDaemon
   end
 
   class SNMP < FetcherBase
-    def initialize
+    def initialize(config)
+      super(config)
       community   = @config[:fetchers][:snmp][:auth][:community]
       @output_dir = @config[:fetchers][:snmp][:output_dir]
       @command    = "snmpwalk $SWITCH -c #{community} -v2c"
@@ -79,7 +80,8 @@ class DataFetchDaemon
   end
 
   class SwitchBridgeTable < FetcherBase
-    def initialize
+    def initialize(config)
+      super(config)
       user        = @config[:fetchers][:switch_bridge_table][:auth][:user]
       password    = @config[:fetchers][:switch_bridge_table][:auth][:password]
       enable      = @config[:fetchers][:switch_bridge_table][:auth][:enable]
