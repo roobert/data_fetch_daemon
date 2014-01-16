@@ -79,7 +79,7 @@ class DataFetchDaemon
       enable      = @config[:fetchers][:switch_config][:auth][:enable]
 
       @output_dir = @config[:fetchers][:switch_config][:output_dir]
-      @command    = "./switch_exec/bin/switch_exec.expect $SWITCH #{user} #{password} '#{enable}' 'show running-config'"
+      @command    = "switch_exec.expect $SWITCH #{user} #{password} '#{enable}' 'show running-config'"
     end
   end
 
@@ -92,7 +92,7 @@ class DataFetchDaemon
       enable      = @config[:fetchers][:switch_bridge_table][:auth][:enable]
 
       @output_dir = @config[:fetchers][:switch_bridge_table][:output_dir]
-      @command    = "./switch_exec/bin/switch_exec.expect $SWITCH #{user} #{password} '#{enable}' 'show bridge address-table'"
+      @command    = "switch_exec.expect $SWITCH #{user} #{password} '#{enable}' 'show bridge address-table'"
     end
   end
 end
