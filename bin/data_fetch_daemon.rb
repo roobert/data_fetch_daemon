@@ -6,7 +6,7 @@ require 'yaml'
 require 'awesome_print'
 require 'active_support/core_ext/hash/indifferent_access'
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '../lib'))
 
 require 'data_fetch_daemon'
 
